@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import ChatList from "./componant/chat/ChatList";
 
 function App() {
+  const [massagesList, setMassagesList] = useState([]);
+
+  //massage = { senderID: "ali", text: "Hi"},
+  const addMassageHandler = (massage) => {
+    setMassagesList((prevMassageList) => {
+      return [...prevMassageList, massage];
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h2>Chat App</h2>
+
+      <div className="Container">
+        <ChatList
+          massages={massagesList}
+          userID="ali"
+          addMassage={addMassageHandler}
+        />
+        <ChatList
+          massages={massagesList}
+          userID="ahmad"
+          addMassage={addMassageHandler}
+        />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,32 @@
+.list {
+  list-style: none;
+  background-color: white;
+  padding: 1rem;
+  width: 99%;
+  height: 86%;
+  margin: 0;
+  border: 1px solid rgb(226, 225, 225);
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 99%;
+}
+li {
+  width: 100%;
+  /* margin: 0.5rem; */
+}
+.name {
+  color: rgb(139, 138, 138);
+  font-size: 0.85rem;
+  margin-bottom: -1rem;
+}
+.massage {
+  color: white;
+  border-radius: 5px;
+  padding: 0.1rem 0.5rem;
+  display: inline-block;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+::-webkit-scrollbar-corner {
+  width: 10px;
+}
